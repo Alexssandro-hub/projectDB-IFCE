@@ -72,6 +72,13 @@ INSERT INTO vistoria_veiculo (observacao, data_vistoria, id_veiculo, username) V
 INSERT INTO vistoria_veiculo (observacao, data_vistoria, id_veiculo, username) VALUES ('vistoria na quarta-feira', timestamp '2022-06-26 18:40:23', 4, 'Thiago');
 INSERT INTO vistoria_veiculo (observacao, data_vistoria, id_veiculo, username) VALUES ('vistoria na quinta-feira', timestamp '2022-06-26 18:40:23', 5, 'Dog');
 
+--VISTORIA_PNEU
+INSERT INTO vistoria_pneu (data_cadastro, observacao, id_vistoria_veiculo, id_pneu) VALUES (timestamp '2022-06-26 18:40:23', 'vistoria pneu segunda-feira', 1, 1);
+INSERT INTO vistoria_pneu (data_cadastro, observacao, id_vistoria_veiculo, id_pneu) VALUES (timestamp '2022-06-26 18:40:23', 'vistoria pneu terça-feira', 2, 2);
+INSERT INTO vistoria_pneu (data_cadastro, observacao, id_vistoria_veiculo, id_pneu) VALUES (timestamp '2022-06-26 18:40:23', 'vistoria pneu quarta-feira', 3, 3);
+INSERT INTO vistoria_pneu (data_cadastro, observacao, id_vistoria_veiculo, id_pneu) VALUES (timestamp '2022-06-26 18:40:23', 'vistoria pneu quinta-feira', 4, 4);
+INSERT INTO vistoria_pneu (data_cadastro, observacao, id_vistoria_veiculo, id_pneu) VALUES (timestamp '2022-06-26 18:40:23', 'vistoria pneu sexta-feira', 5, 5);
+
 --MEDICAO_VISTORIA
 INSERT INTO medicao_vistoria (raio, perfil, largura, indice_carga, indice_velocidade, id_marca_pneu, id_vistoria) VALUES (2, 'Novo', '215mm', '100kg', '95km/h', 1, 1);
 INSERT INTO medicao_vistoria (raio, perfil, largura, indice_carga, indice_velocidade, id_marca_pneu, id_vistoria) VALUES (3, 'Velho', '215mm', '100kg', '95km/h', 2, 2);
