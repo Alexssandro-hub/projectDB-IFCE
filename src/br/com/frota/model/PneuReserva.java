@@ -10,7 +10,7 @@ public class PneuReserva extends GenericModel {
         this.observacao = observacao;
     }
 
-    public PneuReserva(String observacao) {
+    public PneuReserva(String observacao, Integer id) {
         this.observacao = observacao;
         super.setId(id);
     }
@@ -19,7 +19,7 @@ public class PneuReserva extends GenericModel {
         return observacao;
     }
     public int getId_pneu(){ return id_pneu;}
-    public int getId_veiculo { return id_veiculo;}
+    public int getId_veiculo() { return id_veiculo;}
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
