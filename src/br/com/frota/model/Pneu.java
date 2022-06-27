@@ -23,6 +23,7 @@ public class Pneu extends GenericModel {
         super.setId(id);
     }
 
+    public Integer getRaio() {return raio;}
     public String getPerfil() {
         return perfil;
     }
@@ -37,6 +38,11 @@ public class Pneu extends GenericModel {
     public void setLargura (String largura) { this.largura = largura;}
     public void setIndice_carga (String indice_carga) {this.indice_carga = indice_carga;}
     public void setIndice_velocidade (String indice_velocidade) {this.indice_velocidade = indice_velocidade;}
+    public void setRaio(Integer raio) {this.raio = raio;}
+
+    public void setId_marca_pneu(int id_marca_pneu) {
+        this.id_marca_pneu = id_marca_pneu;
+    }
 
     @Override
     public String toString() {
