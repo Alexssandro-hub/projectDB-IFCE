@@ -10,11 +10,11 @@ import java.util.List;
 
 public class PneuReservaDAO extends ConexaoDB{
 
-    private static final String INSERT_PNEURESERVA_SQL = "INSERT INTO pneureserva (observacao, id_veiculo, id_pneu) VALUES (?, ?, ?);";
-    private static final String SELECT_PNEURESERVA_BY_ID = "SELECT id, observacao, id_veiculo, id_pneu FROM pneu WHERE id = ?";
-    private static final String SELECT_ALL_PNEURESERVA = "SELECT * FROM pneureserva;";
-    private static final String DELETE_PNEURESERVA_SQL = "DELETE FROM pneureserva WHERE id = ?;";
-    private static final String UPDATE_PNEURESERVA_SQL = "UPDATE pneu SET observacao = ?, id_veiculo = ?, id_pneu = ? WHERE id = ?;";
+    private static final String INSERT_PNEU_RESERVA_SQL = "INSERT INTO pneureserva (observacao, id_veiculo, id_pneu) VALUES (?, ?, ?);";
+    private static final String SELECT_PNEU_RESERVA_BY_ID = "SELECT id, observacao, id_veiculo, id_pneu FROM pneu WHERE id = ?";
+    private static final String SELECT_ALL_PNEU_RESERVA = "SELECT * FROM pneureserva;";
+    private static final String DELETE_PNEU_RESERVA_SQL = "DELETE FROM pneureserva WHERE id = ?;";
+    private static final String UPDATE_PNEU_RESERVA_SQL = "UPDATE pneu SET observacao = ?, id_veiculo = ?, id_pneu = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM pneureserva;";
 
     public Integer count() {
@@ -34,7 +34,7 @@ public class PneuReservaDAO extends ConexaoDB{
     }
 
     public void insertPneuReserva(PneuReserva entidade) {
-        try (PreparedStatement preparedStatement = prapararSQL(INSERT_PNEURESERVA_SQL)) {
+        try (PreparedStatement preparedStatement = prapararSQL(INSERT_PNEU_RESERVA_SQL)) {
             preparedStatement.setString(1, entidade.getObservacao());
             preparedStatement.setInt(2, entidade.getId_pneu());
             preparedStatement.setInt(3, entidade.getId_veiculo());
@@ -48,7 +48,7 @@ public class PneuReservaDAO extends ConexaoDB{
 
     public PneuReserva selectPneuReserva(int id) {
         PneuReserva entidade = null;
-        try (PreparedStatement preparedStatement = prapararSQL(SELECT_PNEURESERVA_BY_ID)) {
+        try (PreparedStatement preparedStatement = prapararSQL(SELECT_PNEU_RESERVA_BY_ID)) {
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
 
@@ -69,7 +69,7 @@ public class PneuReservaDAO extends ConexaoDB{
 
     public List<PneuReserva> selectAllPneuReserva() {
         List<PneuReserva> entidades = new ArrayList<>();
-        try (PreparedStatement preparedStatement = prapararSQL(SELECT_ALL_PNEURESERVA)) {
+        try (PreparedStatement preparedStatement = prapararSQL(SELECT_ALL_PNEU_RESERVA)) {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
@@ -88,7 +88,7 @@ public class PneuReservaDAO extends ConexaoDB{
     }
 
     public boolean deletePneuReserva(int id) throws SQLException {
-        try (PreparedStatement statement = prapararSQL(DELETE_PNEURESERVA_SQL)) {
+        try (PreparedStatement statement = prapararSQL(DELETE_PNEU_RESERVA_SQL)) {
             statement.setInt(1, id);
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {
@@ -97,7 +97,7 @@ public class PneuReservaDAO extends ConexaoDB{
     }
 
     public boolean updatePneuReserva(PneuReserva entidade) throws SQLException {
-        try (PreparedStatement statement = prapararSQL(UPDATE_PNEURESERVA_SQL)) {
+        try (PreparedStatement statement = prapararSQL(UPDATE_PNEU_RESERVA_SQL)) {
             statement.setString(4, entidade.getObservacao());
             statement.setInt(5, entidade.getId_veiculo());
             statement.setInt(6, entidade.getId_pneu());
