@@ -6,7 +6,7 @@ import br.com.frota.model.Marca;
 import java.sql.SQLException;
 import java.util.List;
 
-public class Teste {
+public class TesteMarcaDAO {
     static MarcaDAO marcaDAO = new MarcaDAO();
 
     public static void main(String[] args) throws SQLException {
